@@ -60,6 +60,20 @@
   color: #ffffff;
   font-weight: 700;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  position: relative;
+}
+
+.nav-links li a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 3px;
+  background: #a8e063;
+  border-radius: 2px;
+  box-shadow: 0 0 8px rgba(168, 224, 99, 0.6);
 }
 
 /* Mobile responsiveness */
@@ -94,5 +108,73 @@
   .nav-links li a {
     padding: 6px 10px;
     font-size: 0.85rem;
+  }
+}
+
+/* User Info Styles */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-greeting {
+  color: #a8e063;
+  font-weight: 500;
+  font-size: 1rem;
+  text-shadow: 0 0 5px rgba(168, 224, 99, 0.3);
+}
+
+.logout-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.logout-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.logout-btn:active {
+  transform: translateY(0);
+}
+
+/* Mobile responsiveness for user info */
+@media (max-width: 768px) {
+  .user-info {
+    gap: 10px;
+  }
+  
+  .user-greeting {
+    font-size: 0.85rem;
+  }
+  
+  .logout-btn {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .user-info {
+    gap: 8px;
+  }
+  
+  .user-greeting {
+    display: none; /* Hide greeting on very small screens */
+  }
+  
+  .logout-btn {
+    padding: 5px 10px;
+    font-size: 0.75rem;
   }
 }

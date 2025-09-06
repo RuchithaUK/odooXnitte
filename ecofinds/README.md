@@ -1,5 +1,29 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+# EcoFinds - Sustainable Second-Hand Marketplace
+
+EcoFinds is an eco-friendly platform that connects people with sustainable second-hand products, helping to reduce waste and promote conscious consumption.
+
+## Sample Login Credentials
+
+To test the application, you can use the following sample credentials:
+
+### Customer Account
+- **Email:** customer@ecofinds.com
+- **Password:** customer123
+
+### Seller Account
+- **Email:** seller@ecofinds.com
+- **Password:** seller123
+
+## How to Test the Application
+
+1. **Start the application** using the instructions below
+2. **Click "Get Started"** on the home page
+3. **Choose your user type** - Customer or Seller
+4. **Use the sample credentials** provided above to log in
+5. **Browse the platform** based on your selected user type
+
 ## Getting Started
 
 First, run the development server:

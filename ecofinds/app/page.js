@@ -116,7 +116,7 @@ export default function Home() {
           Be part of the eco-friendly revolution. Shop consciously, live
           sustainably, and make a difference.
         </p>
-        <Link href="/login">
+        <Link href="/user-type">
           <button className="cta-btn">Get Started</button>
         </Link>
       </section>
