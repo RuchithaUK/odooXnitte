@@ -15,9 +15,9 @@ export default function Home() {
 
   // Dummy product data (later from backend)
   const products = [
-    { id: 1, title: "Vintage Jacket", category: "Clothes", price: 1200, image: "/placeholder-image.svg" },
-    { id: 2, title: "Smartphone X", category: "Electronics", price: 8000, image: "/placeholder-image.svg" },
-    { id: 3, title: "Wooden Chair", category: "Furniture", price: 2000, image: "/placeholder-image.svg" },
+    { id: 1, title: "Vintage Jacket", category: "Clothes", price: 1200, image: "/images/products/Vintage_Jacket.png" },
+    { id: 2, title: "Smartphone X", category: "Electronics", price: 8000, image: "/images/products/Smartphone_X.png" },
+    { id: 3, title: "Wooden Chair", category: "Furniture", price: 2000, image: "/images/products/WoodenChair.png" },
   ];
 
   const filteredProducts = products.filter(

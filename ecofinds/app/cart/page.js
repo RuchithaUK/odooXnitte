@@ -7,9 +7,9 @@ import "../globals.css";
 export default function CartPage() {
   // Example cart data (later we'll replace with backend)
   const [cartItems, setCartItems] = useState([
-    { id: 1, name: "Vintage Jacket", price: 1200, quantity: 1, image: "/placeholder-image.svg", category: "Clothes" },
-    { id: 2, name: "Smartphone X", price: 8000, quantity: 1, image: "/placeholder-image.svg", category: "Electronics" },
-    { id: 3, name: "Wooden Chair", price: 2000, quantity: 2, image: "/placeholder-image.svg", category: "Furniture" },
+    { id: 1, name: "Vintage Jacket", price: 1200, quantity: 1, image: "/images/products/Vintage_Jacket.png", category: "Clothes" },
+    { id: 2, name: "Smartphone X", price: 8000, quantity: 1, image: "/images/products/Smartphone_X.png", category: "Electronics" },
+    { id: 3, name: "Wooden Chair", price: 2000, quantity: 2, image: "/images/products/WoodenChair.png", category: "Furniture" },
   ]);
 
   // Update quantity
