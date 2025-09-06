@@ -24,7 +24,29 @@ export default function LoginPage() {
     setError("");
     setLoading(true);
     
-    // Sample credential validation
+    // Input validation
+    if (!email || !password) {
+      setError("Please enter both email and password");
+      setLoading(false);
+      return;
+    }
+
+    // Email format validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setError("Please enter a valid email address");
+      setLoading(false);
+      return;
+    }
+
+    // Password length validation
+    if (password.length < 6) {
+      setError("Password must be at least 6 characters long");
+      setLoading(false);
+      return;
+    }
+    
+    // Sample credential validation (ONLY these credentials are allowed)
     const sampleCredentials = {
       customer: { email: "customer@ecofinds.com", password: "customer123" },
       seller: { email: "seller@ecofinds.com", password: "seller123" }
@@ -35,6 +57,7 @@ export default function LoginPage() {
 
     const currentCredentials = sampleCredentials[userType];
     
+    // Strict validation - only allow exact matches
     if (currentCredentials && email === currentCredentials.email && password === currentCredentials.password) {
       // Store user info in sessionStorage
       sessionStorage.setItem('userType', userType);
@@ -47,33 +70,12 @@ export default function LoginPage() {
       
       // Redirect to home page
       router.push("/");
-    } else if (email && password) {
-      // For demonstration, allow any valid email/password combination
-      sessionStorage.setItem('userType', userType || 'customer');
-      sessionStorage.setItem('isLoggedIn', 'true');
-      sessionStorage.setItem('userEmail', email);
-      console.log("Logged in with custom credentials:", email);
-      
-      // Dispatch login status change event
-      window.dispatchEvent(new Event('loginStatusChanged'));
-      
-      router.push("/");
     } else {
-      setError("Please enter both email and password");
+      // Invalid credentials - show generic error message
+      setError("Invalid email or password. Please check your credentials and try again.");
     }
     
     setLoading(false);
-  };
-
-  const fillSampleCredentials = () => {
-    if (userType === 'customer') {
-      setEmail('customer@ecofinds.com');
-      setPassword('customer123');
-    } else if (userType === 'seller') {
-      setEmail('seller@ecofinds.com');
-      setPassword('seller123');
-    }
-    setError(""); // Clear any existing errors
   };
 
   const handleInputChange = (setter) => (e) => {
