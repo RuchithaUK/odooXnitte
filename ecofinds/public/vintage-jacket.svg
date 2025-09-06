@@ -1,0 +1,19 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e8f5e8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c8e6c9;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#bg)"/>
+  <g transform="translate(200,150)">
+    <!-- Jacket outline -->
+    <path d="M-80,-60 L-40,-80 L40,-80 L80,-60 L80,80 L-80,80 Z" fill="#4caf50" opacity="0.3"/>
+    <path d="M-60,-70 L-20,-85 L20,-85 L60,-70 L60,60 L-60,60 Z" fill="#66bb6a" opacity="0.5"/>
+    <!-- Jacket details -->
+    <circle cx="-30" cy="-20" r="3" fill="#2e7d32"/>
+    <circle cx="30" cy="-20" r="3" fill="#2e7d32"/>
+    <line x1="-40" y1="0" x2="40" y2="0" stroke="#2e7d32" stroke-width="2"/>
+  </g>
+  <text x="200" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#2e7d32" font-weight="bold">Vintage Jacket</text>
+</svg>

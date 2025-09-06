@@ -12,33 +12,33 @@ export default function MyListings() {
   // Sample seller listings (in real app, this would come from backend)
   const [listings, setListings] = useState([
     { 
-      id: 1, 
+      id: 7, 
       title: "Vintage Leather Boots", 
       category: "Clothes", 
       price: 2500, 
-      image: "/placeholder.png", 
+      image: "/images/VintageLeatherBoots.jpeg", 
       description: "Well-maintained vintage leather boots, perfect for casual wear.",
       status: "Active",
       views: 23,
       dateAdded: "2025-08-15"
     },
     { 
-      id: 2, 
+      id: 8, 
       title: "Wireless Headphones", 
       category: "Electronics", 
       price: 3500, 
-      image: "/placeholder.png", 
+      image: "/images/WirelessHeadphone.jpeg", 
       description: "High-quality wireless headphones with noise cancellation.",
       status: "Active",
       views: 45,
       dateAdded: "2025-08-20"
     },
     { 
-      id: 3, 
+      id: 9, 
       title: "Antique Desk Lamp", 
       category: "Furniture", 
       price: 1800, 
-      image: "/placeholder.png", 
+      image: "/images/AntiqueDesklamp.jpeg", 
       description: "Beautiful antique brass desk lamp, fully functional.",
       status: "Sold",
       views: 67,
@@ -144,31 +144,33 @@ export default function MyListings() {
         <div className="listings-grid">
           {listings.map((listing) => (
             <div key={listing.id} className="listing-card">
-              <div className="listing-image">
-                <Image 
-                  src={listing.image} 
-                  alt={listing.title}
-                  width={200}
-                  height={150}
-                  className="object-cover"
-                />
-                <div className={`status-badge ${listing.status.toLowerCase()}`}>
-                  {listing.status}
+              <Link href={`/product/${listing.id}`} className="listing-link">
+                <div className="listing-image">
+                  <Image 
+                    src={listing.image} 
+                    alt={listing.title}
+                    width={200}
+                    height={150}
+                    className="object-cover"
+                  />
+                  <div className={`status-badge ${listing.status.toLowerCase()}`}>
+                    {listing.status}
+                  </div>
                 </div>
-              </div>
-              
-              <div className="listing-content">
-                <h3>{listing.title}</h3>
-                <p className="listing-description">{listing.description}</p>
-                <div className="listing-details">
-                  <span className="price">₹{listing.price}</span>
-                  <span className="category">{listing.category}</span>
+                
+                <div className="listing-content">
+                  <h3>{listing.title}</h3>
+                  <p className="listing-description">{listing.description}</p>
+                  <div className="listing-details">
+                    <span className="price">₹{listing.price}</span>
+                    <span className="category">{listing.category}</span>
+                  </div>
+                  <div className="listing-meta">
+                    <span className="views">👁️ {listing.views} views</span>
+                    <span className="date">📅 {new Date(listing.dateAdded).toLocaleDateString()}</span>
+                  </div>
                 </div>
-                <div className="listing-meta">
-                  <span className="views">👁️ {listing.views} views</span>
-                  <span className="date">📅 {new Date(listing.dateAdded).toLocaleDateString()}</span>
-                </div>
-              </div>
+              </Link>
               
               <div className="listing-actions">
                 <button 

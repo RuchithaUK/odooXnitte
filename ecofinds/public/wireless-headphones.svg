@@ -1,0 +1,25 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e8eaf6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c5cae9;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#bg)"/>
+  <g transform="translate(200,150)">
+    <!-- Headphones band -->
+    <path d="M-60,-40 Q0,-80 60,-40" fill="none" stroke="#3f51b5" stroke-width="8"/>
+    <path d="M-60,-40 Q0,-75 60,-40" fill="none" stroke="#5c6bc0" stroke-width="4"/>
+    <!-- Left earpiece -->
+    <circle cx="-50" cy="-25" r="25" fill="#3f51b5" opacity="0.8"/>
+    <circle cx="-50" cy="-25" r="18" fill="#000" opacity="0.9"/>
+    <circle cx="-50" cy="-25" r="12" fill="#5c6bc0"/>
+    <!-- Right earpiece -->
+    <circle cx="50" cy="-25" r="25" fill="#3f51b5" opacity="0.8"/>
+    <circle cx="50" cy="-25" r="18" fill="#000" opacity="0.9"/>
+    <circle cx="50" cy="-25" r="12" fill="#5c6bc0"/>
+    <!-- Adjustment -->
+    <rect x="-5" y="-70" width="10" height="20" fill="#1a237e"/>
+  </g>
+  <text x="200" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#3f51b5" font-weight="bold">Wireless Headphones</text>
+</svg>

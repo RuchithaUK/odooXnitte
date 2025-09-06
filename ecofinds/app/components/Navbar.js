@@ -78,6 +78,9 @@ export default function Navbar() {
             <span className="user-greeting">
               Hello, {userType === 'customer' ? 'Customer' : 'Seller'}!
             </span>
+            <Link href="/user-profile" className={`user-profile-link ${pathname === '/user-profile' ? 'active' : ''}`}>
+              👤 User
+            </Link>
             <button className="logout-btn" onClick={handleLogout}>
               Logout
             </button>

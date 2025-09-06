@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import "../globals.css";
 
 export default function Products() {
@@ -22,12 +23,12 @@ export default function Products() {
 
   // Sample products (same as home page)
   const products = [
-    { id: 1, title: "Vintage Jacket", category: "Clothes", price: 1200, image: "/vintage-jacket.jpg", description: "A stylish vintage leather jacket in excellent condition." },
-    { id: 2, title: "Smartphone X", category: "Electronics", price: 8000, image: "/smartphone-x.jpg", description: "Latest smartphone with advanced features and great camera quality." },
-    { id: 3, title: "Wooden Chair", category: "Furniture", price: 2000, image: "/wooden-chair.svg", description: "Handcrafted wooden chair perfect for any home decor." },
-    { id: 4, title: "Designer Handbag", category: "Clothes", price: 1500, image: "/placeholder.png", description: "Elegant designer handbag in premium leather." },
-    { id: 5, title: "Gaming Laptop", category: "Electronics", price: 45000, image: "/placeholder.png", description: "High-performance gaming laptop with latest graphics card." },
-    { id: 6, title: "Coffee Table", category: "Furniture", price: 3500, image: "/placeholder.png", description: "Modern glass coffee table for your living room." },
+    { id: 1, title: "Vintage Jacket", category: "Clothes", price: 1200, image: "/placeholder-image.svg", description: "A stylish vintage leather jacket in excellent condition." },
+    { id: 2, title: "Smartphone X", category: "Electronics", price: 8000, image: "/placeholder-image.svg", description: "Latest smartphone with advanced features and great camera quality." },
+    { id: 3, title: "Wooden Chair", category: "Furniture", price: 2000, image: "/placeholder-image.svg", description: "Handcrafted wooden chair perfect for any home decor." },
+    { id: 4, title: "Designer Handbag", category: "Clothes", price: 1500, image: "/placeholder-image.svg", description: "Elegant designer handbag in premium leather." },
+    { id: 5, title: "Gaming Laptop", category: "Electronics", price: 45000, image: "/placeholder-image.svg", description: "High-performance gaming laptop with latest graphics card." },
+    { id: 6, title: "Coffee Table", category: "Furniture", price: 3500, image: "/placeholder-image.svg", description: "Modern glass coffee table for your living room." },
   ];
 
   const filteredProducts = products.filter(
@@ -108,20 +109,24 @@ export default function Products() {
         <div className="product-grid">
           {filteredProducts.map((product) => (
             <div className="product-card" key={product.id}>
-              <div className="product-image">
-                <Image 
-                  src={product.image} 
-                  alt={product.title}
-                  width={200}
-                  height={200}
-                  className="object-cover"
-                />
-              </div>
-              <div className="product-info">
-                <h3>{product.title}</h3>
-                <p className="product-description">{product.description}</p>
-                <p className="product-price">₹{product.price}</p>
-                <small className="product-category">{product.category}</small>
+              <Link href={`/product/${product.id}`} className="product-link">
+                <div className="product-image">
+                  <Image 
+                    src={product.image} 
+                    alt={product.title}
+                    width={200}
+                    height={200}
+                    className="object-cover"
+                  />
+                </div>
+                <div className="product-info">
+                  <h3>{product.title}</h3>
+                  <p className="product-description">{product.description}</p>
+                  <p className="product-price">₹{product.price}</p>
+                  <small className="product-category">{product.category}</small>
+                </div>
+              </Link>
+              <div className="product-actions">
                 <button 
                   className="add-to-cart-btn"
                   onClick={() => addToCart(product)}
