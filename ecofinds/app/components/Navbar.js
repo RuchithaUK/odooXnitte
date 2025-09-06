@@ -64,7 +64,15 @@ export default function Navbar() {
         <li><Link href="/about" className={pathname === '/about' ? 'active' : ''}>About</Link></li>
         <li><Link href="/products" className={pathname === '/products' ? 'active' : ''}>Products</Link></li>
         <li><Link href="/contact" className={pathname === '/contact' ? 'active' : ''}>Contact</Link></li>
-        <li><Link href="/cart" className={pathname === '/cart' ? 'active' : ''}>Cart</Link></li>
+        {isLoggedIn && userType === 'customer' && (
+          <li><Link href="/cart" className={pathname === '/cart' ? 'active' : ''}>Cart</Link></li>
+        )}
+        {isLoggedIn && userType === 'seller' && (
+          <li><Link href="/my-listings" className={pathname === '/my-listings' ? 'active' : ''}>My Listings</Link></li>
+        )}
+        {!isLoggedIn && (
+          <li><Link href="/cart" className={pathname === '/cart' ? 'active' : ''}>Cart</Link></li>
+        )}
         {isLoggedIn ? (
           <li className="user-info">
             <span className="user-greeting">

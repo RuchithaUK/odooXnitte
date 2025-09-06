@@ -1,14 +1,15 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import "../globals.css";
 
 export default function CartPage() {
   // Example cart data (later we'll replace with backend)
   const [cartItems, setCartItems] = useState([
-    { id: 1, name: "Eco Water Bottle", price: 20, quantity: 1, image: "/placeholder.png", category: "Eco-friendly" },
-    { id: 2, name: "Reusable Bag", price: 10, quantity: 2, image: "/placeholder.png", category: "Reusable" },
-    { id: 3, name: "Bamboo Toothbrush", price: 5, quantity: 3, image: "/placeholder.png", category: "Sustainable" },
+    { id: 1, name: "Vintage Jacket", price: 1200, quantity: 1, image: "/vintage-jacket.jpg", category: "Clothes" },
+    { id: 2, name: "Smartphone X", price: 8000, quantity: 1, image: "/smartphone-x.jpg", category: "Electronics" },
+    { id: 3, name: "Wooden Chair", price: 2000, quantity: 2, image: "/wooden-chair.svg", category: "Furniture" },
   ]);
 
   // Update quantity
@@ -66,13 +67,19 @@ export default function CartPage() {
                 {cartItems.map((item) => (
                   <div key={item.id} className="cart-item">
                     <div className="item-image">
-                      <img src={item.image} alt={item.name} />
+                      <Image 
+                        src={item.image} 
+                        alt={item.name}
+                        width={80}
+                        height={80}
+                        className="object-cover rounded"
+                      />
                     </div>
                     
                     <div className="item-details">
                       <h3>{item.name}</h3>
                       <p className="item-category">{item.category}</p>
-                      <p className="item-price">${item.price}</p>
+                      <p className="item-price">₹{item.price}</p>
                     </div>
                     
                     <div className="quantity-controls">
@@ -101,7 +108,7 @@ export default function CartPage() {
                     </div>
                     
                     <div className="item-total">
-                      <p className="total-price">${item.price * item.quantity}</p>
+                      <p className="total-price">₹{item.price * item.quantity}</p>
                       <button 
                         onClick={() => removeItem(item.id)}
                         className="remove-btn"
@@ -120,12 +127,12 @@ export default function CartPage() {
               
               <div className="summary-line">
                 <span>Subtotal:</span>
-                <span>${subtotal}</span>
+                <span>₹{subtotal}</span>
               </div>
               
               <div className="summary-line discount">
                 <span>🌱 Eco Discount (15%):</span>
-                <span>-${savings}</span>
+                <span>-₹{savings}</span>
               </div>
               
               <div className="summary-line shipping">
@@ -137,7 +144,7 @@ export default function CartPage() {
               
               <div className="summary-line total">
                 <span>Total:</span>
-                <span>${total}</span>
+                <span>₹{total}</span>
               </div>
               
               <div className="checkout-section">

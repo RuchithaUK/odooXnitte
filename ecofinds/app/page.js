@@ -8,9 +8,9 @@ export default function Home() {
 
   // Dummy product data (later from backend)
   const products = [
-    { id: 1, title: "Vintage Jacket", category: "Clothes", price: 1200, image: "/placeholder.png" },
-    { id: 2, title: "Smartphone X", category: "Electronics", price: 8000, image: "/placeholder.png" },
-    { id: 3, title: "Wooden Chair", category: "Furniture", price: 2000, image: "/placeholder.png" },
+    { id: 1, title: "Vintage Jacket", category: "Clothes", price: 1200, image: "/vintage-jacket.jpg" },
+    { id: 2, title: "Smartphone X", category: "Electronics", price: 8000, image: "/smartphone-x.jpg" },
+    { id: 3, title: "Wooden Chair", category: "Furniture", price: 2000, image: "/wooden-chair.svg" },
   ];
 
   const filteredProducts = products.filter(
