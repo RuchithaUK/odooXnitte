@@ -1,18 +1,34 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import "./Navbar.css"; // we'll style separately
+import { usePathname } from "next/navigation";
+import "./Navbar.css";
 
 export default function Navbar() {
+  const pathname = usePathname();
+
+  const navItems = [
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About" },
+    { href: "/products", label: "Products" },
+    { href: "/contact", label: "Contact" },
+    { href: "/cart", label: "Cart" },
+  ];
+
   return (
     <nav className="navbar">
       <div className="nav-logo">🌱 EcoFinds</div>
       <ul className="nav-links">
-        <li><Link href="/">Home</Link></li>
-        <li><Link href="/about">About</Link></li>
-        <li><Link href="/products">Products</Link></li>
-        <li><Link href="/contact">Contact</Link></li>
-        <li><Link href="/cart">Cart</Link></li>
+        {navItems.map((item) => (
+          <li key={item.href}>
+            <Link 
+              href={item.href}
+              className={pathname === item.href ? "active" : ""}
+            >
+              {item.label}
+            </Link>
+          </li>
+        ))}
       </ul>
     </nav>
   );

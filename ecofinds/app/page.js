@@ -28,7 +28,12 @@ export default function Home() {
           Your one-stop platform to discover eco-friendly and sustainable
           second-hand products that help protect our planet.
         </p>
-        <button className="cta-btn">Explore Products</button>
+        <button 
+          className="cta-btn"
+          onClick={() => document.getElementById('products-section').scrollIntoView({ behavior: 'smooth' })}
+        >
+          Explore Products
+        </button>
       </section>
 
       {/* Problem Statement */}
@@ -67,7 +72,7 @@ export default function Home() {
       </section>
 
       {/* Product Preview */}
-      <section className="products">
+      <section className="products" id="products-section">
         <h2>Explore Products</h2>
 
         {/* Search & Filter */}
